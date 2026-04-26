@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+<div class="container">
+    <!-- Card with Glow Effect -->
+    <div class="card mt-5 p-4 shadow-custom">
+        <div class="card-body">
+            <h1 class="card-title">Welcome to Short Text Sentiment Analysis Project</h1>
+            <p class="card-text">This is a simple project to classify the sentiment of text using deep learning. Please register or login to access the application.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Add custom CSS styles -->
+<style>
+    /* Custom Glow Effect */
+    .shadow-custom {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 123, 255, 0.3);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow-custom:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 123, 255, 0.5);
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'appuser/userbase.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Sentiment Analysis
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="form-group mb-3">
+                            <label for="reviewText">Enter Review Text</label>
+                            <input type="text" name="text" id="reviewText" class="form-control" placeholder="Enter Review Text">
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Analyze</button>
+                        </div>
+                    </form>
+
+                    {% if sentiment %}
+                        <div class="alert alert-info mt-3" role="alert">
+                            The predicted sentiment is: <strong>{{ sentiment }}</strong>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

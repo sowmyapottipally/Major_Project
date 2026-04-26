@@ -1,0 +1,36 @@
+{% extends 'appuser/userbase.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card border shadow-lg p-4" style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4">Short Text Sentiment Analysis Result</h1>
+            
+            <div class="mb-3">
+                <h3>Your Review:</h3>
+                <p class="text-muted">{{ user_input }}</p>
+            </div>
+
+            {% if model_warning %}
+            <div class="alert alert-warning" role="alert">
+                {{ model_warning }}
+            </div>
+            {% endif %}
+            
+            <div class="mb-4">
+                <h3>Sentiment Predictions:</h3>
+                <ul class="list-group">
+                    {% for prediction in predictions %}
+                    <li class="list-group-item">
+                        <strong>{{ prediction.label }}:</strong> {{ prediction.score }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="text-center">
+                <a href="{% url 'predict_sentiment' %}" class="btn btn-primary">Analyze another review</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

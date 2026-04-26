@@ -1,0 +1,25 @@
+{% extends 'appuser/userbase.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card border shadow-lg p-4" style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4">Short Text Sentiment Analysis</h1>
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endif %}
+            
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <textarea class="form-control" name="user_input" rows="5" placeholder="Enter your movie review...">{{ user_input|default:'' }}</textarea>
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary" value="Analyze Sentiment">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

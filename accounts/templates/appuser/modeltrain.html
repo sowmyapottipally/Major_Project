@@ -1,0 +1,59 @@
+{% extends 'appuser/userbase.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+
+        <!-- Confusion Matrix Card -->
+        <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card h-100" style="width: 100%;">
+                <div class="card-header">
+                    Confusion Matrix
+                </div>
+                <div class="card-body">
+                    <img src="{% static 'images/confusion.jpeg' %}" class="card-img-top" alt="Confusion Matrix">
+                </div>
+            </div>
+        </div>
+
+        <!-- Classification Report Card -->
+        <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card h-100" style="width: 100%;">
+                <div class="card-header">
+                    Classification Report
+                </div>
+                <div class="card-body">
+                    <img src="{% static 'images/clf.jpeg' %}" class="card-img-top" alt="Classification Report">
+                </div>
+            </div>
+        </div>
+
+        <!-- Train and Validation Accuracy Card -->
+        <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card h-100" style="width: 100%;">
+                <div class="card-header">
+                    Train and Validation Accuracy
+                </div>
+                <div class="card-body">
+                    <img src="{% static 'images/trainvacc.jpeg' %}" class="card-img-top" alt="Train and Validation Accuracy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Train and Validation Loss Card -->
+        <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card h-100" style="width: 100%;">
+                <div class="card-header">
+                    Train and Validation Loss
+                </div>
+                <div class="card-body">
+                    <img src="{% static 'images/trainvloss.jpeg' %}" class="card-img-top" alt="Train and Validation Loss">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
